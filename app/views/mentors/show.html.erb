@@ -5,5 +5,9 @@
   <%= @mentor.name %>
 </p>
 
+<% @mentor.tasks.each do |task| %>
+  <%= link_to task.description, task_path(task) %>
+<% end %>
+<%= link_to 'Add Task',  new_mentor_task_path(@mentor) %> |
 <%= link_to 'Edit', edit_mentor_path(@mentor) %> |
 <%= link_to 'Back', mentors_path %>
